@@ -64,3 +64,23 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+.blue-screen{
+  position: fixed;
+  padding: 3rem 5rem;
+  color: white;
+  inset: 0 0 0 0 ;
+  background-color: #008cff;
+  margin: 0 auto;
+}
+
+.sad-face{
+  font-size: 120px;
+}
+.upper{
+  font-size:28px;
+}
+.lower{
+  font-size: 16px;
+}

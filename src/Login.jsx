@@ -23,7 +23,7 @@ export default function Login(props) {
                         </div>
                         <div className="user">
                             <h3>Al pacino</h3>
-                            <p>Al pacino does not need a password...</p>
+                            <p>Al Pacino n'a pas besoin de mot de passe...</p>
                         </div>
                     </section>
                 </div>
