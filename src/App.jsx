@@ -142,10 +142,10 @@ export default App
 
 function BlueScreen() {
 
-    // useEffect(() => {
-    //     const song = new Audio("https://www.myinstants.com/media/sounds/directed-by-robert-b_voI2Z4T.mp3");
-    //     song.play();
-    // }, [])
+    useEffect(() => {
+        const song = new Audio("https://www.myinstants.com/media/sounds/directed-by-robert-b_voI2Z4T.mp3");
+        song.play();
+    }, [])
 
     return <div className="blue-screen">
         <div className="sad-face">:(</div>
