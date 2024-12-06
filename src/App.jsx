@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import StartupScene from "./StartupScene.jsx";
 import Login from "./Login.jsx";
+import WinrarPopUp from "./WinrarPopUp.jsx";
 
 function App() {
     const [showStartup, setShowStartup] = useState(true)
@@ -14,8 +15,6 @@ function App() {
     const [gender, setGender] = useState("")
     const [name, setName] = useState("")
     const [showBlueScreen, setShowBlueScreen] = useState(false)
-
-    const btnContainer = useRef()
 
 
     if (showStartup) {
@@ -50,6 +49,7 @@ function App() {
                 </p>
             </div>
 
+            <PopUp />
 
             {showIE && (
                 <div style={{
@@ -125,14 +125,85 @@ function App() {
                                 <label htmlFor="example1">Je suis un robot</label>
                             </div>
 
-                            <div ref={btnContainer}>
-
+                            <div>
                                 <button onClick={() => setShowBlueScreen(true)}>J'ai fini</button>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
+
+            <div
+                style={{
+                    backgroundColor: "#245edc",
+                    background:
+                        "linear-gradient(to bottom, #245edc 0%, #3f8cf3 9%, #245edc 18%, #245edc 92%, #1941a5 100%) center/cover no-repeat",
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "32px",
+                }}
+            >
+                <div
+                    style={{
+                        height: "100%",
+                        float: "left",
+                        fontSize: "22px",
+                        lineHeight: "22px",
+                        fontWeight: "bold",
+                        fontStyle: "italic",
+                        background:
+                            "radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover no-repeat",
+                        boxShadow: "0px 5px 10px #79ce71 inset, 4px 0 8px #3f8cf3",
+                        padding: "2px 25px 6px 10px",
+                        textShadow: "1px 1px 3px #222",
+                        borderRadius: "0px 8px 8px 0px",
+                        marginRight: "16px",
+                        cursor: "pointer",
+                        color: "white",
+                    }}
+                >
+                    <img
+                        src="/win.jpeg"
+                        alt="Logo"
+                        style={{
+                            height: "20px",
+                            filter: "drop-shadow(1px 1px 1px #222)",
+                            transform: "translateY(4px)",
+                        }}
+                    />{" "}
+                    start
+                </div>
+
+                <div
+                    style={{
+                        width: "calc(100% - 225px)",
+                        float: "left",
+                    }}
+                ></div>
+
+                <div
+                    style={{
+                        height: "100%",
+                        float: "right",
+                        fontFamily: "calibri, monospace",
+                        fontSize: "14px",
+                        lineHeight: "14px",
+                        background:
+                            "linear-gradient(to bottom, #1290e9 0%, #19b9f3 9%, #1290e9 18%, #1290e9 92%, #1941a5 100%) center/cover no-repeat",
+                        boxShadow: "0px 5px 10px #14a5f0 inset, 0px 5px 10px #333333",
+                        padding: "9px 15px 9px 25px",
+                        borderLeft: "1px solid #092e51",
+                        textShadow: "1px 1px 2px #222",
+                        cursor: "pointer",
+                        textTransform: "uppercase",
+                        color: "white",
+                    }}
+                >
+                    4:43 pm
+                </div>
+            </div>
         </div>
     )
 }
@@ -150,5 +221,29 @@ function BlueScreen() {
     return <div className="blue-screen">
         <div className="sad-face">:(</div>
         <p className="upper">Nous sommes en 2024, même Bill Gates ne l'utilise plus</p>
-        <p className="lower">si vous souhaitez en savoir plus, vous pouvez rechercher en ligne cette erreur : Proxela</p></div>
+        <p className="lower">si vous souhaitez en savoir plus, vous pouvez rechercher en ligne cette erreur :
+            Proxela</p></div>
+}
+
+
+function PopUp() {
+    const [showPopup, setShowPopup] = useState(false)
+
+    let timer;
+
+    useEffect(() => {
+        timer = setTimeout(() => {
+            setShowPopup(true)
+        }, 1000)
+
+        return () => {
+            clearTimeout(timer)
+        }
+    })
+
+    if (!showPopup) return null
+
+    return (
+        <WinrarPopUp />
+    )
 }
