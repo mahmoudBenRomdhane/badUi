@@ -219,10 +219,11 @@ function BlueScreen() {
     }, [])
 
     return <div className="blue-screen">
-        <div className="sad-face">:(</div>
-        <p className="upper">Nous sommes en 2024, même Bill Gates ne l'utilise plus</p>
-        <p className="lower">si vous souhaitez en savoir plus, vous pouvez rechercher en ligne cette erreur :
-            Proxela</p></div>
+               <WinrarPopUp />
+            <div className="sad-face">:(</div>
+            <p className="upper">Nous sommes en 2024, même Bill Gates ne l'utilise plus</p>
+            <p className="lower">si vous souhaitez en savoir plus, vous pouvez rechercher en ligne cette erreur :
+                Proxela</p></div>;
 }
 
 

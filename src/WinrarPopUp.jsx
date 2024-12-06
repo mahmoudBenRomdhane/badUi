@@ -25,7 +25,7 @@ function WinrarPopUp() {
             <div className="window" style={{ width: "350px" }}>
                 <div className="title-bar">
                     <div className="title-bar-text">
-                        <p style={{ display: "flex", alignItems: "center" }}>
+                        <p style={{ display: "flex", alignItems: "center"}}>
                             <img
                                 src="/winrar.jpeg"
                                 alt="Icon"
@@ -43,7 +43,7 @@ function WinrarPopUp() {
                     </div>
                 </div>
                 <div className="window-body">
-                    <p>
+                    <p style={{ color: "black" }}>
                         Veuillez noter que WinRAR n'est pas un logiciel libre. Après 4
                         secondes d'essai, vous devrez acheter une licence pour continuer à
                         l'utiliser.
